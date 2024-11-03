@@ -1,8 +1,8 @@
 <?php 
 ob_start(); //Output Buffering Start 
-include 'moaddi_back/admin/connect.php';
-include 'moaddi_back/functions/admin_functions.php';
-include 'moaddi_back/functions/front_functions.php';
+include 'dashbord/admin/connect.php';
+include 'dashbord/functions/admin_functions.php';
+include 'dashbord/functions/front_functions.php';
 $settings = getSettingsToHomePage($con); 
 $pageTitle = $settings[0] . ' _ ' .'الرئيسية';  
 include 'front_temp/head.php';

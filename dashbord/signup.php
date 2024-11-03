@@ -2,7 +2,7 @@
 ob_start();
 session_start();
 $noNavbar = '';  // No Navbar in this page
-$pageTitle = 'تسجيل طلب اشتراك بالجيم';  // this function to load page title
+$pageTitle = 'تسجيل طلب اشتراك ';  // this function to load page title
 
 if (isset($_SESSION['user'])) {
 	header('location: index');  // Redirct to index
