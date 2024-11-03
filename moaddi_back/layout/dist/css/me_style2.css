@@ -1,0 +1,296 @@
+h1,h2,h3,label,.btn{
+	font-family: 'Changa', sans-serif !important;
+}
+h4,h5,h6,p,span,.dropdown-item{
+	font-family: 'Tajawal', sans-serif !important;
+}
+.slide.is-expanded a {
+    font-family: 'Changa', sans-serif !important;
+}
+
+.main-dashboard-header-right > div label {
+    font-family: 'Changa', sans-serif !important;
+}
+.main-dashboard-header-right > div h5 {
+    color: #000;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.card-dashboard-eight .list-group-item p {
+    margin-bottom: 0;
+    margin-right: 5px;
+    font-size: small;
+    color: #1f00ff;
+    font-weight: 600;
+}
+.card-dashboard-eight .list-group-item span {
+    display: block;
+    margin-right: auto;
+    font-weight: 600;
+    color: #0c1629;
+    font-size: smaller;
+}
+.card-dashboard-eight .card-title {
+    color: #242f48;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 6px;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.country-table .table th {
+    padding: 8px;
+    line-height: 1.462;
+    text-align: center;
+	font-family: 'Changa', sans-serif !important;
+}
+.country-table .table td {
+	padding: 8px;
+    line-height: 1.462;
+    text-align: center;
+	font-family: 'Tajawal', sans-serif !important;
+}
+.export-table .table th{
+	text-align: center;
+	font-family: 'Changa', sans-serif !important;
+	padding: 5px 0px;
+}
+.export-table .table td {
+	text-align: center;
+    font-family: 'Tajawal', sans-serif !important;
+    font-size: xx-small;
+    font-weight: 700;
+	padding: 5px 0px;
+}
+
+.form-control-sm {
+    height: calc(1.5em + 0.5rem + 4.5px);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.76562rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    font-family: 'Tajawal', sans-serif !important;
+    color: #00f;
+    font-weight: 700;
+}
+
+.shadow1{
+	border: 1px solid #00000024;
+		-webkit-box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.22);
+		-moz-box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.22);
+	box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.22);
+	text-align: center;
+	padding: 1px 5px 1px 5px;
+	color:#000;
+	font-weight: 500;
+	font-family: 'Tajawal', sans-serif !important;
+}
+.print-asa{
+	text-align: right;
+	padding: 2px 0px 1px 0px;
+	font-family: 'Changa', sans-serif !important;
+	font-size: 13px;
+    font-weight: bold;
+}
+
+.form-subTitle{
+	padding: 10px 5px;
+    text-align: center;
+    background-color: #246568;
+    color: #fff;
+    margin: 10px 0px;
+	border-radius:5px;
+}
+
+label{
+	color: #12493c;
+    font-weight: 500;
+    font-size: small;
+}
+
+.nice-message{
+	text-align: center;
+	font-size: 20px;
+	padding: 15px;
+	background-color:#f4238f;
+	color:#000;
+	margin-bottom: 10px;
+	font-family: 'Tajawal', sans-serif;
+}
+
+.counter{
+    color: #269390;
+    background: #fff;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0;
+    text-align: center;
+    width: 210px;
+    margin: 0 auto;
+    border-bottom: 15px solid #269390;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+} 
+.counter .counter-icon{
+    font-size: 40px;
+    line-height: 105px;
+    width: 105px;
+    height: 105px;
+    display: inline-block;
+}
+.counter .counter-value{
+    color: #fff;
+    background: linear-gradient(to top left,#269390 49%,#46AEAF 50%);
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 105px;
+    width: 105px;
+    height: 105px;
+    margin: 0 0 20px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.25);
+    vertical-align: top;
+    display: inline-block;
+}
+.counter h3{
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    margin: 0 0 20px;
+}
+.counter.pink{
+    color: #e23a58;
+    border-color: #ca3258;
+}
+.counter.pink .counter-value{ background: linear-gradient(to top left,#cc3254 49%,#e23a59 50%); }
+.counter.yellow{
+    color: #f6af23;
+    border-color: #f2b317;
+}
+.counter.yellow .counter-value{ background: linear-gradient(to top left,#f2b218 49%,#fcc82c 50%); }
+.counter.blue{
+    color: #39506a;
+    border-color: #3c506b;
+}
+.counter.blue .counter-value{ background: linear-gradient(to top left,#2f4154 49%,#3c506b 50%); }
+@media screen and (max-width:990px){
+    .counter{ margin-bottom: 40px; }
+} 
+.form-style-10 .section{
+    padding: 10px 5px;
+    background-color:#262537;
+    text-align: center;
+    font-family: 'Tajawal', sans-serif;
+    color: #fff;
+} 
+.headertext{
+    padding: 10px 5px;
+    background-color:#262537;
+    text-align: center;
+    font-family: 'Tajawal', sans-serif;
+    color: #fff;
+}
+.info-box {
+    box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
+    border-radius: 0.25rem;
+    background: #fff;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 1rem;
+    min-height: 80px;
+    padding: 0.5rem;
+    position: relative;
+}
+.info-box .info-box-icon {
+    border-radius: 0.25rem;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 1.875rem;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    width: 70px;
+}
+.info-box .info-box-content {
+    -ms-flex: 1;
+    flex: 1;
+    padding: 5px 10px;
+}
+.info-box .info-box-text, .info-box .progress-description {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.info-box .info-box-number {
+    display: block;
+    font-weight: 700;
+}
+.small-box {
+    font-family: 'Tajawal', sans-serif;
+    margin: 1px;
+}
+.small-box>.inner {
+    padding: 10px;
+}
+.small-box h3, .small-box p {
+    z-index: 5;
+}
+.small-box h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    padding: 0;
+    white-space: nowrap;
+    color: #a8000f;
+}
+@media (max-width: 767.98px){
+.small-box p {
+    font-size: 12px;
+}
+}
+.small-box .icon {
+    color: rgb(0 0 0 / 66%);
+    z-index: 0;
+}
+@media (max-width: 767.98px){
+.small-box .icon {
+    display: none;
+}
+}
+.small-box .icon>i.fa, .small-box .icon>i.fab, .small-box .icon>i.far, .small-box .icon>i.fas, .small-box .icon>i.glyphicon, .small-box .icon>i.ion {
+    font-size: 70px;
+    top: 20px;
+}
+.small-box .icon>i {
+    font-size: 90px;
+    position: absolute;
+    left: 15px;
+    top: 15px !important;
+    transition: all .3s linear;
+}
+.small-box>.small-box-footer {
+    background: rgb(0 0 0 / 74%);
+    color: rgba(255,255,255,.8);
+    display: block;
+    padding: 3px 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    z-index: 10;
+}
+.bg-indigo {
+    background-color: #6610f2!important;
+}
+.section {
+    text-align: center;
+    padding: 5px 0px;
+    background-color: #5294e254;
+    color: #000;
+    font-family: 'Changa';
+    font-weight: 600;
+    border-radius: 3px;
+}
