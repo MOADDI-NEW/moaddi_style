@@ -75,6 +75,11 @@ if (isset($_SESSION['Edara30'])) {
 							</a>
 						</li>
 						<li class="nav-item">
+							<a href="brand_front_page" class="nav-link text-dark"><i class="nav-icon far fa-bell"></i>
+								<p class="text">   صفحة الشركات واجهة  </p>
+							</a>
+						</li>
+						<li class="nav-item">
 							<a href="gallery" class="nav-link text-dark"><i class="nav-icon fas fa-calendar-alt"></i>
 								<p>  معرض الصور  </p>
 							</a>

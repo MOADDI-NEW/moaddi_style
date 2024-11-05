@@ -4,7 +4,7 @@
             <div class="row">
                <div class="col-lg-8">
                      <div class="intro-slider-container slider-container-ratio slider-container-1 mb-2 mb-lg-0">
-                     <div class="intro-slider intro-slider-1 owl-carousel owl-simple owl-light owl-nav-inside" data-toggle="owl" data-owl-options='{ "nav": false,  "responsive": { "768": { "nav":true } }, "autoplay": true, "autoplayTimeout": 3000 }'>
+                        <div class="intro-slider intro-slider-1 owl-carousel owl-simple owl-light owl-nav-inside" data-toggle="owl" data-owl-options='{ "nav": false,  "responsive": { "768": { "nav":true } }, "autoplay": true, "autoplayTimeout": 3000 }'>
                            <div class="intro-slide">
                                  <figure class="slide-image">
                                     <picture>
@@ -53,29 +53,15 @@
                <div class="col-lg-4">
                      <div class="intro-banners">
                         <div class="row row-sm">
-                           <div class="col-md-6 col-lg-12">
-                                 <div class="banner banner-display">
-                                    <a href="#">
-                                       <img src="assets/images/banners/home/intro/banner-1.jpg" alt="Banner">
-                                    </a>
-                                    <div class="banner-content">
-                                       <h4 class="banner-subtitle text-darkwhite"><a href="">Moaddi</a></h4>
-                                       <h3 class="banner-title text-white"><a href="#">Advertising & Marketing</a></h3>
-                                       <a href="#" class="btn btn-outline-white banner-link">More Details<i class="icon-long-arrow-right"></i></a>
-                                    </div>
-                                 </div>
-                           </div>
-
-                           <div class="col-md-6 col-lg-12">
+                           <div class="col-md-12 col-lg-12">
                                  <div class="banner banner-display mb-0">
-                                    <a href="#">
+                                    <a href="brand">
                                        <img src="assets/images/banners/home/intro/banner-2.jpg" alt="Banner">
                                     </a>
-
                                     <div class="banner-content">
                                        <h4 class="banner-subtitle text-darkwhite"><a href="#">Moaddi</a></h4>
                                        <h3 class="banner-title text-white"><a href="#">Brand companies & Factories</a></h3>
-                                       <a href="#" class="btn btn-outline-white banner-link">More Details<i class="icon-long-arrow-right"></i></a>
+                                       <a href="brand" class="btn btn-outline-white banner-link">More Details<i class="icon-long-arrow-right"></i></a>
                                     </div>
                                  </div>
                            </div>
