@@ -3,7 +3,7 @@
 $host = "localhost";    /* Host name */
 $user = "root";         /* User */
 $password = "";         /* Password */
-$dbname = "hlawany";   /* Database name */
+$dbname = "moaddi";   /* Database name */
 
 $conn = mysqli_connect($host, $user, $password,$dbname);
 $conn->set_charset('utf8');

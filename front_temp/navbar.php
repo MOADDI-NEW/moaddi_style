@@ -22,7 +22,7 @@
                      <ul>
                         <li><a href="tel:#"><img src="assets/images/svg/whatsapp-svgrepo-com.svg" width="20" height="20"></a></li>
                         <li><a href="tel:#"><img src="assets/images/svg/wechat-logo-svgrepo-com.svg" width="20" height="20"></a></li>
-                        <li><a href="#signin-modal" data-toggle="modal"><i class="icon-user"></i>Login</a></li>
+                        <li><a href="./dashbord/"><i class="icon-user"></i>Login</a></li>
                      </ul>
             </ul>
          </div>

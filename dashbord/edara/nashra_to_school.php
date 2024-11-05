@@ -100,7 +100,7 @@ if (isset($_SESSION['Edara30'])){
                                                 <div class="col-md-6">
                                                 <div class="form-group" style="text-align: right;">
                                                     <label class="control-label">العنوان</label>
-                                                    <input type="text" name="title"  class="form-control form-control-sm"  required="required"  placeholder="عنوان الخبر " />
+                                                    <input type="text" name="title"  class="form-control form-control-sm"  required="required"  placeholder="عنوان الخبر " style="text-align:left;"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -108,48 +108,11 @@ if (isset($_SESSION['Edara30'])){
                                                 <div class="col-md-12">
                                                 <div class="form-group has-danger" style="text-align: right;">
                                                     <label class="control-label"> نص الخبر</label>
-                                                    <textarea type="textarea" name="path" autocomplete="off" required="required" placeholder="نص الخبر...."  style="width: 100%;height: 200px;" ></textarea>
+                                                    <textarea type="textarea" name="path" autocomplete="off" required="required" placeholder="نص الخبر...."  style="width: 100%;height: 200px;text-align:left;" ></textarea>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row p-t-20">
-                                            <div class="col-md-6">
-                                                <div class="form-group" style="text-align: right;">
-                                                    <label class="control-label"> اسم الرابط الأول</label>
-                                                    <input type="text" name="link_name1" class="form-control form-control-sm" />
-                                                </div>
-                                            </div>
-                                                <div class="col-md-6">
-                                                <div class="form-group" style="text-align: right;">
-                                                    <label class="control-label">الرابط الأول</label>
-                                                    <input type="text" name="link_url1" class="form-control form-control-sm"  />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group" style="text-align: right;">
-                                                    <label class="control-label"> اسم الرابط الثاني</label>
-                                                    <input type="text" name="link_name2" class="form-control form-control-sm"    />
-                                                </div>
-                                            </div>
-                                                <div class="col-md-6">
-                                                <div class="form-group" style="text-align: right;">
-                                                    <label class="control-label">الرابط الثاني</label>
-                                                    <input type="text" name="link_url2" class="form-control form-control-sm"  />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group" style="text-align: right;">
-                                                    <label class="control-label"> اسم الرابط الثالث</label>
-                                                    <input type="text" name="link_name3" class="form-control form-control-sm"    />
-                                                </div>
-                                            </div>
-                                                <div class="col-md-6">
-                                                <div class="form-group" style="text-align: right;">
-                                                    <label class="control-label">الرابط الثالث</label>
-                                                    <input type="text" name="link_url3" class="form-control form-control-sm"  />
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                         <div class="row p-t-20">
                                                 <div class="col-md-12">
                                                 <div class="form-group has-danger" style="text-align: right;">
@@ -214,12 +177,6 @@ if (isset($_SESSION['Edara30'])){
                         $name     = $_POST['name'];
                         $title  = $_POST['title'];
                         $path  = $_POST['path'];
-                        $link_name1  = $_POST['link_name1'];
-                        $link_url1  = $_POST['link_url1'];
-                        $link_name2  = $_POST['link_name2'];
-                        $link_url2  = $_POST['link_url2'];
-                        $link_name3  = $_POST['link_name3'];
-                        $link_url3  = $_POST['link_url3'];
                         
                         $shark  = $_POST['shark'];
                         
@@ -283,26 +240,15 @@ if (isset($_SESSION['Edara30'])){
                                                 items
                                 (Name, title,  path, news_img,
                                 shark, 
-                                link_name1, link_url1,
-                                link_name2, link_url2,
-                                link_name3, link_url3,
                                 nashra_date, Cat_ID, Member_ID)
                                             VALUES
                                 (:zname, :ztitle, :zpath, :znews_img,
                                     :zshark,
-                                    :zlink_name1,  :zlink_url1, 
-                                    :zlink_name2, :zlink_url2, 
-                                    :zlink_name3, :zlink_url3,
-                                    
-                                    
                                 now(), :zcat, :zmember)");
                             $stmt->execute(array(
                             
                             'zname'    => $name,    'ztitle'  => $title,       'zpath'  => $path,  'znews_img'   => $news_img,
                             'zshark'   => $shark, 
-                            'zlink_name1'   => $link_name1,    'zlink_url1'   => $link_url1, 
-                            'zlink_name2'   => $link_name2,     'zlink_url2'   => $link_url2,
-                            'zlink_name3'   => $link_name3,  'zlink_url3'   => $link_url3, 
                             'zcat'  => $cat,   'zmember'  => $member ));
                                             //Echo Success Measage
                                             echo "<script>

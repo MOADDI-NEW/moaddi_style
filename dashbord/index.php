@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head><meta charset="UTF-8"><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'><meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="Description" content="<?php echo $settings[1]; ?>"><meta name="Author" content="Alaa Amer"><meta name="Keywords" content="سمارت جيم" />
 	<!-- <meta http-equiv="refresh" content="0; URL=underconstruction" /> -->
-	<title> تسجيل دخول - <?php echo $settings[0]; ?>   </title>
+	<title>  LOG IN - <?php echo $settings[0]; ?>   </title>
 	<link rel="icon" href="../layout/img/favicon.png" type="image/x-icon" />
 	<link rel="stylesheet" href="layout/plugins/fontawesome-free/css/all.min.css">
 	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -107,22 +107,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			<div class="card-body login-card-body">
 				<div class="login-logo d-flex justify-content-between" style="padding: 10px 5px;">
 					<div class="input-group-append"><a href="../"><div class="input-group-text"><span class="fas fa-home"></span></div></a></div>
-					<div class="input-group-append"><a href="../"><div class="input-group-text">عائلة الحلواني</div></a></div>
+					<div class="input-group-append"><a href="../"><div class="input-group-text">  Moaddi  </div></a></div>
 					<div class="input-group-append"><a href="signup"><div class="input-group-text"><span class="fas fa-user"></span></div></a></div>
 				</div>
-				<p class="login-box-msg text-primary">تسجيل الدخول</p>
+				<p class="login-box-msg text-primary"> LOG IN  </p>
 				<form action="#" method="POST">
 					<div class="input-group mb-3">
-						<input class="form-control" type="text" name="username" placeholder="اسم المستخدم" autocomplete="off">
+						<input class="form-control" type="text" name="username" placeholder="User Name" autocomplete="off">
 						<div class="input-group-append"><div class="input-group-text"><span class="fas fa-envelope"></span></div></div>
 					</div>
 					<div class="input-group mb-3">
-						<input class="form-control" type="password" name="password" placeholder="كلمة المرور" autocomplete="new-password">
+						<input class="form-control" type="password" name="password" placeholder="Password" autocomplete="new-password">
 						<div class="input-group-append"><div class="input-group-text"><span class="fas fa-lock"></span></div></div>
 					</div>
 					<div class="row mt-3 mb-5">
 						<div class="col">
-							<input type="submit" name="login" class="btn btn-primary btn-block" value="دخول" />
+							<input type="submit" name="login" class="btn btn-primary btn-block" value="LOG IN" />
 						</div>
 					</div>
 				</form>
@@ -130,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		</div>
 		<div class="row">
 			<div class="col">
-				<a href="signup" class="btn btn-info btn-block"> تسجيل طلب إشتراك </a>
+				<a href="signup" class="btn btn-info btn-block"> New registration </a>
 			</div>
 		</div>
 	</div>

@@ -8,13 +8,13 @@ if (isset($_SESSION['Edara30'])) {
 		<!-- Brand Logo -->
 		<a href="./" class="brand-link navbar-navy">
 			<img src="../layout/dist/img/AdminLTELogo.png" alt="kfsedu Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-			<span class="brand-text font-weight-light text-wite"> عائلة الحلواني</span>
+			<span class="brand-text font-weight-light text-wite"> Moaddi </span>
 		</a>
 		<!-- Sidebar -->
 		<div class="sidebar navbar-white">
 			<div class="user-panel mt-3 pb-3 mb-3 d-flex">
 				<div class="image">
-					<img src="../../layout/img/6.jpg" class="img-circle elevation-2" alt="User Image">
+					<img src="../../assets/images/about/img-1.jpg" class="img-circle elevation-2" alt="User Image">
 				</div>
 				<div class="info">
 					<a href="./" class="d-block text-dark text-center">
@@ -35,12 +35,6 @@ if (isset($_SESSION['Edara30'])) {
 							<a href="member_client" class="nav-link text-dark">
 								<i class="nav-icon fas fa-users"></i>
 								<p> قوائم المشتركين <span class="right badge badge-danger">A</span> </p>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="member_death" class="nav-link text-dark">
-								<i class="nav-icon fas fa-users"></i>
-								<p>  قوائم الوفيات <span class="right badge badge-danger">A</span> </p>
 							</a>
 						</li>
 						
@@ -76,8 +70,8 @@ if (isset($_SESSION['Edara30'])) {
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="events" class="nav-link text-dark"><i class="nav-icon far fa-bell"></i>
-								<p class="text"> المناسبات </p>
+							<a href="clints" class="nav-link text-dark"><i class="nav-icon far fa-bell"></i>
+								<p class="text"> اعلان شركات </p>
 							</a>
 						</li>
 						<li class="nav-item">
