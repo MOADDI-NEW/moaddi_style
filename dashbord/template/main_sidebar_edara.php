@@ -65,23 +65,18 @@ if (isset($_SESSION['Edara30'])) {
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="front_messages" class="nav-link text-dark"><i class="nav-icon fas fa-calendar-alt"></i>
-								<p> رسائل الموقع  </p>
+							<a href="vending_map" class="nav-link text-dark"><i class="nav-icon fas fa-calendar-alt"></i>
+								<p>   أماكن المكائن </p>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a href="clints" class="nav-link text-dark"><i class="nav-icon far fa-bell"></i>
-								<p class="text"> اعلان شركات </p>
+								<p class="text"> براند شركات </p>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a href="brand_front_page" class="nav-link text-dark"><i class="nav-icon far fa-bell"></i>
 								<p class="text">   صفحة الشركات واجهة  </p>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="gallery" class="nav-link text-dark"><i class="nav-icon fas fa-calendar-alt"></i>
-								<p>  معرض الصور  </p>
 							</a>
 						</li>
 						
@@ -100,13 +95,7 @@ if (isset($_SESSION['Edara30'])) {
 								<p> رسائل الموقع  </p>
 							</a>
 						</li>
-						<li class="nav-item has-treeview">
-							<a href="#" class="nav-link text-dark"><i class="nav-icon far fa-envelope"></i><p>  المسابقة <i class="fas fa-angle-left right"></i></p></a>
-							<ul class="nav nav-treeview">
-								<li class="nav-item"><a href="questions" class="nav-link text-dark"><i class="far fa-circle nav-icon"></i><p> الاسئلة </p></a></li>
-								<li class="nav-item"><a href="points_view" class="nav-link text-dark"><i class="far fa-circle nav-icon"></i><p> عرض التقارير</p></a></li>
-							</ul>
-						</li>
+						
 						<?php
 					} ?>
 					

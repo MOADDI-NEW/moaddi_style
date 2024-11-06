@@ -27,7 +27,7 @@ if (! empty($items)){?>
                      </h3>
                      <div class="entry-content">
                         <?php echo'<p> '. implode(' ', array_slice(explode(' ', $sentence), 0, 42)) . ' ' .'......'.' </p>';?>
-                        <a href="single.html" class="read-more">Read More</a>
+                       <?php  echo'<a href="blog?do=View&itemid='.$item['Item_ID'].'" class="read-more">Read More</a>'; ?>
                      </div>
                   </div>
             </article>

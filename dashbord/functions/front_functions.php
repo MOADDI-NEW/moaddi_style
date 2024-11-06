@@ -6,19 +6,19 @@ function getSettingsToHomePage($con)
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     return array(
-        $row['site_name'],          // 0س
+        $row['site_name'],          // 0
         $row['site_desc'],          // 1
         $row['about_1'],            // 2
         $row['about_2'],            // 3
         $row['about_vedio'],        // 4
         $row['about_3'],            // 5
-        $row['address'],            // 13
-        $row['email'],              // 14
-        $row['phone'],              // 15
-        $row['facebook'],           // 16
-        $row['youtube'],            // 17
-        $row['twitter'],            // 18
-        $row['instagram']           // 19
+        $row['address'],            // 6
+        $row['email'],              // 7
+        $row['phone'],              // 8
+        $row['facebook'],           // 9
+        $row['youtube'],            // 10
+        $row['twitter'],            // 11
+        $row['instagram']           // 12
     );
 }
 

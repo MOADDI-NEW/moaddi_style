@@ -132,7 +132,16 @@ if (isset($_SESSION['Edara30'])){
 														<div class="col-md-12">   
 															<div class="form-group" style="text-align: right;">
 																<label class="control-label">   الخدمات  </label>
-																<textarea rows="10" name="about_3" class="form-control form-control-sm"  required="required" style="text-align:left;"><?php echo $row['about_3']?></textarea>
+																<script src="https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/7/tinymce.min.js"></script>
+														            <textarea id="menu1" name="about_3" required="required" style="text-align:left;"><?php echo $row['about_3']?></textarea>
+														            <script> 
+                                                      tinymce.init({
+                                                      selector: 'textarea#menu1',
+                                                      menu: {
+                                                         edit: { title: 'Edit', items: 'undo redo | selectall' }
+                                                      }
+                                                      }); 
+                                                      </script>
 															</div>
 														</div>
 														<hr>

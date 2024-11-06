@@ -39,10 +39,9 @@
                <a href="./" class="logo"><img src="assets/images/logo.png" alt="Moaddi Logo" width="105" height="25"></a>
                <nav class="main-nav">
                      <ul class="menu sf-arrows">
-                        <li class="active"><a href="index.html" class="sf-with-ul">Home</a></li>
-                        <li><a href="about.html" class="sf-with-ul">About Us</a></li>
-                        <li><a href="blog.html" class="sf-with-ul">Blog</a></li>
-                        <li><a href="contact.html" class="sf-with-ul">Contact Us</a></li>
+                        <li class="active"><a href="./" class="sf-with-ul">Home</a></li>
+                        <li><a href="about" class="sf-with-ul">About Us</a></li>
+                        <li><a href="contact" class="sf-with-ul">Contact Us</a></li>
                      </ul>
                </nav>
             </div>
