@@ -1,7 +1,7 @@
 </div>
 <!-- /.content-wrapper -->
 <footer class="main-footer">
-	جميع الحقوق &copy; 2019-2023 <a href="https://Moaddi.net" target="_blank"> Moaddi </a>.
+	All rights reserved  &copy; 2019-2023 <a href="https://Moaddi.net" target="_blank"> Moaddi </a>.
 	<div class="float-right d-none d-sm-inline-block">
 		Developed by :
 		<abbr title="برمجة علاء عامر ">

@@ -8,18 +8,13 @@
 							<div class="content mb-5">
 								<div class="homey">
 									<div class="firstinfo">
-									<?php echo'<img src="../admin/nsharat_uploads/user_avatar/' . $info['user_avatar'] . '" alt="'.$info['FullName'].'" style="width:100px">';?>
+									<?php echo'<img src="../../assets/images/about/img-1.jpg" alt="'.$info['FullName'].'" style="width:100px">';?>
 										<div class="profileinfo">
 											<h4><?php echo $info['FullName']?></h4>
-											<h5><?php echo $info['job_title']?></h5>
-											<p class="bio"> 
-												<span class="text-bold"> تاريخ الميلاد </span> : 
-											<time datetime="<?php echo $info['birthdate']?>"><?php echo $info['birthdate']?></time>
-										</p>
 										</div>
 									</div>
 								</div>
-										<div class="badgeshomey d-flex justify-content-center"><?php echo $info['al_city']?></div>
+										<div class="badgeshomey d-flex justify-content-center">Moaddi</div>
 							</div>
 						</div>
 					</div>
@@ -33,59 +28,10 @@
 				<div class="card">
 					<div class="card-body">
 						<div class="row">
-							<div class="col-md-12">
-								<div class="card direct-chat direct-chat-warning">
-										<div class="card-header bg-navy">
-											<h3 class="card-title"> المسابقة   <span  class="badge badge-success float-right ml-2"><?php echo countItems2("id", "questions", "id > 0") ?>   سؤال  </span>  </h3>
-										</div>
-										<div class="card-body">
-												<?php 
-													$stmt = $con->prepare("SELECT * FROM questions ");
-													$stmt->execute();
-													$rows = $stmt->fetchAll(); ?>
-														<table class="table table-head-fixed table-bordered table-striped">
-															<thead>
-																<tr>
-																	<th> #</th>
-																	<th>  السؤال  </th>
-																	<th> الدرجة  </th>
-																</tr>
-															</thead>
-															<tbody>
-																<?php
-																	$i = 1;
-																	foreach($rows as $row){
-																	echo "<tr>";
-																		echo "<td>" . $i++ . "</td>";
-																		echo "<td>" . $row['question'] . "</td>";
-																		echo "<td>";
-																			$_SESSION['user_id'] = $info['UserID'];
-																			$stmt = $con->prepare("SELECT * FROM user_answers WHERE user_id = ? AND question_id = ?");
-																			$stmt->execute(array($_SESSION['user_id'], $row['id']));
-																			$answer = $stmt->fetch();
-											
-																			if ($answer) {
-																				if ($row['correct_option'] == $answer['answer'] ) {
-																					echo'10';
-																				}else{
-																					echo'0';
-																				}
-																			} else { 
-																				echo'<a href="questions?do=View&quetionid=' . $row['id'] . '" class="btn btn-sm btn-danger w-100"> عرض السؤال </a>';
-																			}
-																		echo"</td>";
-																	echo "</tr>";
-																	} 							
-																	?>
-															</tbody>
-														</table>
-										</div>
-								</div>
-							</div>
 							<div class="col-md-6">
 								<div class="card direct-chat direct-chat-warning">
 									<div class="card-header bg-navy">
-										<h3 class="card-title">تعليقات للموقع   <span  class="badge badge-success float-right ml-2"><?php echo countItems2("web_rete", "comments_site", "approve IN ('1') ") ?> تم الموافقة</span>  <span  class="badge badge-danger float-right"><?php echo countItems2("web_rete", "comments_site", "approve IN ('0') ") ?> تعليق قيد الانتظار</span></h3>
+										<h3 class="card-title"> Site Comments  <span  class="badge badge-success float-right ml-2"><?php echo countItems2("web_rete", "comments_site", "approve IN ('1') ") ?> Comment approved</span>  <span  class="badge badge-danger float-right"><?php echo countItems2("web_rete", "comments_site", "approve IN ('0') ") ?> Pending comment </span></h3>
 									</div>
 									<div class="card-body">
 										<div class="direct-chat-messages"> <?php 
@@ -130,55 +76,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-6">
-								<div class="card">
-									<div class="card-header bg-navy">
-										<h3 class="card-title">   مناسبات الموقع  <span class="badge badge-danger float-right"><?php echo countItems2("event_id", "events", "event_id > 0") ?> مناسبة</span></h3>
-									</div>
-									<div class="card-body table-responsive p-0" style="height: 300px;"> <?php 
-										$stmt = $con->prepare("SELECT * FROM events WHERE aporove = 1 ORDER BY event_date DESC limit 5 ");
-										$stmt->execute();
-										$items = $stmt->fetchAll();
-										if (! empty($items)){ ?>
-											<div class="table-responsive main-dash">
-												<table class="table table-head-fixed table-bordered table-striped">
-													<thead>
-														<tr>
-															<th> التاريخ</th>
-															<th>  نوع المناسبة </th>
-															<th> صاحب الماسبة </th>
-															<th>  صورة </th>
-														</tr>
-													</thead>
-													<tbody><?php
-														foreach($items as $item){
-														echo "<tr>";
-															echo "<td>" . $item['event_date'] . "</td>";
-															echo "<td>";
-															$stmt = $con->prepare("SELECT * FROM events_names ");
-															$stmt->execute();  $users = $stmt->fetchAll();
-															foreach ($users as $user) {
-																if ($item['event_name'] == $user['id']) {echo $user['event_name'];} 
-																}
-															echo"</td>";
-																$stmt = $con->prepare("SELECT * FROM users ");
-																$stmt->execute();  $users = $stmt->fetchAll();
-																foreach ($users as $user) {
-																	if ($item['created_by'] == $user['UserID']) {
-																	echo "<td>" . $user['FullName'] . "</td>";
-																	echo "<td><img class='direct-chat-img' src='../admin/nsharat_uploads/user_avatar/" . $user['user_avatar'] . "' alt='' /></td>";
-																	} 
-																}
-														echo "</tr>";
-														} 							
-														?>
-													</tbody>
-												</table>
-											</div><?php 
-										}?>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 				</div>

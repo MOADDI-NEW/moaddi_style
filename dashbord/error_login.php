@@ -1,15 +1,15 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="icon" href="layout/img/brand/favicon.png" type="image/x-icon" /><link rel="stylesheet" href="layout/plugins/bootstrap/js/rtl.css"><title>سمارت جيم - تسجيل دخول</title><link rel="stylesheet" href="layout/dist/css/new_style.css"></head>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="icon" href="layout/img/brand/favicon.png" type="image/x-icon" /><link rel="stylesheet" href="layout/plugins/bootstrap/js/rtl.css"><title> Moaddi - Error login </title><link rel="stylesheet" href="layout/dist/css/new_style.css"></head>
 <body>
     <div class='image-background'>
         <div class='container h-100'>
             <div class='row h-100 align-items-center d-flex justify-content-center'>
                 <div class='col-12 text-center'>
                     <h1 class='rise'><div class="text-effect"><span>E</span><span>R</span><span>O</span><span>O</span><span>R</span></div></h1>
-                    <p class='lead'>خطأ برقم المستخدم أو كلمة المرور</p>
-                    <p class='lead' style="color: #00faff;"> عليك الاتصال بـ :</p>
-                    <a class="btn btn-danger" href="" target="_blank"> شكاوى كلمات المرور </a>
+                    <p class='lead'> User Name or password error</p>
+                    <p class='lead' style="color: #00faff;"> You shoud call :</p>
+                    <a class="btn btn-danger" href="" target="_blank"> Password Complaints </a>
                 </div>
-                <div class="col-6"><a href="./" class="btn btn-warning btn-block" rel="noopener noreferrer">عودة</a></div>
+                <div class="col-6"><a href="./" class="btn btn-warning btn-block" rel="noopener noreferrer">Go back</a></div>
             </div>
         </div>
     </div>

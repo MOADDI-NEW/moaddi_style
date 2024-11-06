@@ -7,7 +7,7 @@ session_start();
 $noNavbar = '';
 $main_header_school = '';
 $main_sidebar_school = '';
-$pageTitle = ' تقيم الموقع';  // this function to load page title
+$pageTitle = 'Moaddi :  web rate ';  // this function to load page title
 include 'init.php';   //  Dirctory page
 
 if (isset($_SESSION['user'])){
@@ -34,10 +34,10 @@ if (array_search($info['RegStatus'], ['1']) !== false) { // مسجل بالدب�
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title text-center"> تقيمي للموقع </h4>
+                                        <h4 class="card-title text-center">  Web Rate  </h4>
                                         <div class="table-responsive export-table">
                                             <table id="example" class="table table-bordered table-striped" style= "width:99%; direction:rtl;">
-                                                <thead><tr> <th scope="col">التاريخ</th><th scope="col">التقييم </th><th scope="col">التعليق </th><th scope="col">الحالة</th></tr></thead>
+                                                <thead><tr> <th scope="col">date</th><th scope="col">Rate </th><th scope="col">comment </th><th scope="col">Status</th></tr></thead>
                                                 <tbody>
                                                     <?php
                                                     foreach($items as $item){
@@ -47,7 +47,7 @@ if (array_search($info['RegStatus'], ['1']) !== false) { // مسجل بالدب�
                                                             echo "<td>" . $item['comment'] . "</td>";
                                                         
                                                             echo "<td data-label='التحكم'>";
-                                                                if ($item['approve'] == 0 ) { echo '<span class="text-red"> جاري نشر التقييم بعد المراجعة </span>'; } else { echo '<span class="text-green"> تم نشر التقيم </span>';}
+                                                                if ($item['approve'] == 0 ) { echo '<span class="text-red"> Rating is being published after review </span>'; } else { echo '<span class="text-green"> The evaluation has been published. </span>';}
                                                             echo "</td>";
                                                         echo "</tr>";
                                                     } ?>						
@@ -57,8 +57,8 @@ if (array_search($info['RegStatus'], ['1']) !== false) { // مسجل بالدب�
                                     </div>	<?php		
                                     }else{
                                         echo '<div class="container">';
-                                                echo '<div class="nice-message"> لا توجد أي تقيمات متاحة للموقع </div>';
-                                                echo '<a href="web_rate?do=Add" class="btn btn-primary"><i class="fa fa-plus"></i>  إضافة تقيم </a>';
+                                                echo '<div class="nice-message"> There are no reviews available for the site. </div>';
+                                                echo '<a href="web_rate?do=Add" class="btn btn-primary"><i class="fa fa-plus"></i>  Add Review  </a>';
                                         echo '</div>';
                                     } ?>
                                 </div>		
@@ -73,7 +73,7 @@ if (array_search($info['RegStatus'], ['1']) !== false) { // مسجل بالدب�
                         <div class="col-lg-12">
                             <div class="card card-outline-primary" style="background: #fff  none repeat scroll 0 0;">
                                 <div class="card-header">
-                                    <h4 class="m-b-0 text-dark" style="text-align:center;">اضافة تقيم  للموقع</h4>
+                                    <h4 class="m-b-0 text-dark" style="text-align:center;"> Add Review  </h4>
                                 </div>
                                 <div class="card-body">
                                         <form action="?do=Insert" method="POST" >
@@ -81,15 +81,15 @@ if (array_search($info['RegStatus'], ['1']) !== false) { // مسجل بالدب�
                                                 <div class="row p-t-20">
                                                     <div class="col-md-12">
                                                         <div class="form-group has-danger" style="text-align: right;">
-                                                            <label class="control-label">  اكتب تعليق للموقع</label>
-                                                            <textarea type="textarea" name="comment" autocomplete="off" required="required" placeholder="نص التعليق...."  style="width: 100%;height: 200px;" ></textarea>
+                                                            <label class="control-label">  Write a comment for the site</label>
+                                                            <textarea type="textarea" name="comment" autocomplete="off" required="required" placeholder="Write a comment for the site ..."  style="width: 100%;height: 200px;" ></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row p-t-20">
                                                     <div class="col-md-12">
                                                         <div class="form-group" style="text-align: right;">
-                                                            <label class="control-label">  تقييم المركز </label>
+                                                            <label class="control-label">  Review  </label>
                                                             <div class="rating-stars">
                                                                 <input type="radio" name="web_rete" value="0" id="rs0" checked><label for="rs0"></label>
                                                                 <input type="radio" name="web_rete" value="20" id="rs1"><label for="rs1"></label>
@@ -118,7 +118,7 @@ if (array_search($info['RegStatus'], ['1']) !== false) { // مسجل بالدب�
                                                     </div>
                                                 </div>
                                             <div class="form-actions pull-right">
-                                                <i class="fa fa-check"></i> <input type="submit" class="btn btn-success swalDefaultSuccess"  value="أضافة تقييم " />  
+                                                <i class="fa fa-check"></i> <input type="submit" class="btn btn-success swalDefaultSuccess"  value="Review" />  
                                             </div>
                                         </form>
                                     </div>
@@ -183,7 +183,7 @@ if (array_search($info['RegStatus'], ['1']) !== false) { // مسجل بالدب�
                             <script src="../layout/dist/js/sweetalert2.min.js"></script>
                             <script>
                                 Swal.fire({
-                                    title: 'تم إضافة التقييم بنجاح',
+                                    title: 'The rating has been added successfully.',
                                     width: 600, icon: 'success',  padding: '4em',
                                     color: '#716add', showConfirmButton: false,
                                     background: '#fff',  backdrop: `rgba(0,80,123,0.8)`

@@ -7,7 +7,7 @@ session_start();
 $noNavbar = '';
 $main_header_school = '';
 $main_sidebar_school = '';
-$pageTitle = 'الصفحة الرئيسية للمشتركين';  // this function to load page title
+$pageTitle = 'Moaddi - Home page';  // this function to load page title
 include 'init.php';   //  Dirctory page
 
 if (isset($_SESSION['user'])){

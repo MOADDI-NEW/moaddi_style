@@ -10,16 +10,14 @@ if (isset($_SESSION['user'])){
     include 'init.php';   //  Dirctory page 
     include 'breadcrumb.php';
     ?>
-    <div class="main1">
+    <div class="main1" style="direction:ltr;">
         <div class="overlay"></div>
         <div class="terminal">
-            <h1 class="text-center mb-4">مرحبا بك في  <span class="errorcode">   عائلة الحلواني </span></h1>
-            
-            <p class="output">انت الآن قيد انتظار موافقة ادارة الموقع على طلب إلتحاقك </p>
-            
-            <p class="output">فضلا قم بإختيار الأجراء المناسب <a class="bac" href="">عودة للخلف</a> أو 
-            <a class="bac" href="../../">رئيسية الموقع</a>.</p><br>
-            <div class="typing-demo">مدير الموقع  🙋 </div>
+            <h1 class="text-center mb-4">   Welcome in <span class="errorcode">   Moaddi  </span></h1>
+            <p class="output"> You are now waiting for the site administration to approve your application. </p>
+            <p class="output"> Please select the appropriate procedure. <a class="bac" href="">Go back </a> أو 
+            <a class="bac" href="../../">Home Page </a>.</p><br>
+            <div class="typing-demo">Admin   🙋 </div>
         </div>
     </div>
 <style>
@@ -101,6 +99,7 @@ if (isset($_SESSION['user'])){
         text-shadow:
             0 0 1px rgba(51, 255, 51, 0.4),
             0 0 2px rgba(255, 255, 255, 0.8);
+            text-align: left;
     }
 
     .output::before {
@@ -136,6 +135,7 @@ if (isset($_SESSION['user'])){
             font-size: 1em;
             direction: ltr !important;
             font-family: 'Changa', sans-serif;
+            text-align: left;
             }
 
             @keyframes typing {

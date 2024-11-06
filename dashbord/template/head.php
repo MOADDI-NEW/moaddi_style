@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="Description" content="سمارت جيم">
+	<meta name="Description" content="Moaddi">
 	<meta name="Author" content="Alaa Amer">
 	<meta name="Keywords" content="Hefzmoyaser, quran, Hefz" />
 	<!-- <meta http-equiv="refresh" content="900;url=logout" /> -->

@@ -19,20 +19,6 @@ if (isset($_SESSION['Edara30'])) {
 			</li>
 		</ul>
 
-		<!-- SEARCH FORM -->
-		<?php if (array_search($info['GroupID'], ['1', '3']) !== false) {	 ?>
-			<form class="form-inline ml-3"  method="post" action="marks_searsh">
-				<div class="input-group input-group-sm">
-					<input class="form-control form-control-navbar" name="search" type="search"  placeholder="البحث عن مشترك .."  aria-label="Search">
-					<div class="input-group-append">
-						<button class="btn btn-navbar" type="submit">
-							<i class="fas fa-search"></i>
-						</button>
-					</div>
-				</div>
-			</form>
-		<?php }?>
-
 		<!-- Right navbar links -->
 		
 	</nav>

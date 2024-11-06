@@ -11,10 +11,10 @@ if (isset($_SESSION['user'])) {
 				<a class="nav-link text-white" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
 			</li>
 			<li class="nav-item d-none d-sm-inline-block">
-				<a href="./" class="nav-link text-white">الرئيسية</a>
+				<a href="./" class="nav-link text-white">Home</a>
 			</li>
 			<li class="nav-item d-none d-sm-inline-block">
-				<a href="logout" class="nav-link text-white">خروج</a>
+				<a href="logout" class="nav-link text-white">Log out</a>
 			</li>
 		</ul><?php
 		if (array_search($info['RegStatus'], ['1']) !== false) { // مسجل بالدبلوم  

@@ -128,18 +128,7 @@ if (isset($_SESSION['Edara30'])){
 																	</div>
 															</div>
 															<div class="row">
-																	<div class="col-md-6">
-																		<div class="form-group" style="text-align: right;">
-																			<label class="control-label"> الوظيفة  </label>
-																			<input type="text" name="job_title"  required="required" class="form-control form-control-sm" placeholder="الوظيفة" />
-																		</div>
-																	</div>
-																	<div class="col-md-6">
-																		<div class="form-group" style="text-align: right;">
-																			<label class="control-label"> المدينة</label>
-																			<input type="text" name="al_city"  required="required" class="form-control form-control-sm" placeholder="المدينة" />
-																		</div>
-																	</div>
+																	
 																	<div class="col-md-6">
 																		<div class="form-group has-danger" style="text-align: right;">
 																			<label class="control-label">الهاتف</label>
@@ -147,18 +136,6 @@ if (isset($_SESSION['Edara30'])){
 																			</div>
 																	</div>
 																	
-																	<div class="col-md-6">
-																		<div class="form-group has-danger" style="text-align: right;">
-																			<label class="control-label">  تاريخ الميلاد </label>
-																			<input type="date" name="birthdate"  required="required" class="form-control form-control-sm" placeholder="تاريخ الميلاد" />
-																		</div>
-																	</div>
-																	<div class="col-md-6">
-																		<div class="form-group has-danger" style="text-align: right;">
-																			<label class="control-label">   الصورة الشخصية </label>
-																			<input type="file" name="user_avatar"  required="required" class="form-control form-control-sm"  />
-																		</div>
-																	</div>
 																	
 															</div>
 															<div class="row p-t-20"> 
@@ -199,20 +176,8 @@ if (isset($_SESSION['Edara30'])){
 					$name  = $_POST['full'];
 					$hashPass = sha1($_POST['password']);
 
-					$job_title  = $_POST['job_title'];
-					$al_city  = $_POST['al_city'];
-					$birthdate  = $_POST['birthdate'];
 					$phone  = filter_var($_POST['phone'], FILTER_SANITIZE_NUMBER_INT);
 
-					$user_avatarName = $_FILES['user_avatar']['name'];
-					$user_avatarSize = $_FILES['user_avatar']['size'];
-					$user_avatarTmp  = $_FILES['user_avatar']['tmp_name'];
-					$user_avatarType = $_FILES['user_avatar']['type'];
-					$user_avatarAllowedExtension = array("jpeg", "jpg", "png", "gif");
-					$tmp = explode('.', $user_avatarName);
-					$user_avatarExtension = end($tmp);
-
-					
 					$department  = filter_var($_POST['department'], FILTER_SANITIZE_NUMBER_INT);
 					$role  = filter_var($_POST['role'], FILTER_SANITIZE_NUMBER_INT);
 					
@@ -233,19 +198,7 @@ if (isset($_SESSION['Edara30'])){
 					if (empty($name)) {
 						$formErrors[] = '<span> لا يمكنك ترك اسم المستخدم فارغ</span> </i>';
 					}
-					if (! empty($user_avatarName) && ! in_array($user_avatarExtension, $user_avatarAllowedExtension)){
-						$formErrors[] = '<span> امتداد الصورة عير مسموح به</span> </i>';
-					}
-					if (empty($user_avatarName)) {
-							$formErrors[] = '<span> يجب اختيار صور شخصية </span> </i>';
-					}
-					if ($user_avatarSize > 2621440) {
-							$formErrors[] = '<span> حجم الصورة يجب ان يكون اقل من 2.5 ميجا بايت </span> </i>';
-					}
-				
-					if (empty($al_city)) {
-						$formErrors[] = '<span> اختر المدينة</span> </i>';
-					} ?>
+					 ?>
 					
 					<div class ="container-fluid" style="direction:rtl;">	
 						<div class="row">
@@ -272,9 +225,6 @@ if (isset($_SESSION['Edara30'])){
 					//check if no error update operators
 					if (empty($formErrors)){
 
-							$user_avatar = rand(0, 1000000000)	. '_' . $user_avatarName;
-							move_uploaded_file($user_avatarTmp , "../admin/nsharat_uploads/user_avatar//" . $user_avatar);
-
 						// check if user Exist in database
 						$check = checkItem ("Username", "users", $user);
 						if ($check == 1){
@@ -289,23 +239,18 @@ if (isset($_SESSION['Edara30'])){
 							// Inser Info to database *** مهم *** 
 							$stmt = $con->prepare("INSERT INTO 
 															users
-																	(Username, Password, Email, FullName ,RegStatus, Date,  job_title, al_city, 
-																	birthdate, user_avatar,
+																	(Username, Password, Email, FullName ,RegStatus, Date, 
 																	phone, 
 																	department, role)
 															VALUES
-																	(:zuser, :zpass, :zmail, :zname, 1, now(), :zjob_title, :zal_city,
-																		:zbirthdate, :zuser_avatar,
+																	(:zuser, :zpass, :zmail, :zname, 1, now(), 
 																		:zphone,   :zdepartment, :zrole)"); 
 							$stmt->execute(array(
 									'zuser'  => $user,
 									'zpass'  => $hashPass,
 									'zmail' => $email,
 									'zname' => $name,
-									'zjob_title' => $job_title,
-									'zal_city' => $al_city,
-									'zbirthdate' => $birthdate,
-									'zuser_avatar' => $user_avatar,
+								
 									'zphone' => $phone,
 									
 									'zdepartment' => $department,
@@ -391,18 +336,6 @@ if (isset($_SESSION['Edara30'])){
 																	<input type="text" name="full" class="form-control form-control-sm" value="<?php echo $row['FullName']?>"  required="required" />
 																	</div>
 														</div>
-														<div class="col-md-6">
-															<div class="form-group" style="text-align: right;">
-																	<label class="control-label"> الوظيفة  </label>
-																	<input type="text" name="job_title"  required="required"  value="<?php echo $row['job_title']?>" class="form-control form-control-sm"  />
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="form-group" style="text-align: right;">
-																	<label class="control-label"> المدينة</label>
-																	<input type="text" name="al_city"  required="required"  value="<?php echo $row['al_city']?>" class="form-control form-control-sm"  />
-															</div>
-														</div>
 													</div>
 													<div class="row">
 														<div class="col-sm-6">
@@ -410,12 +343,6 @@ if (isset($_SESSION['Edara30'])){
 																	<label class="control-label">الهاتف</label>
 																	<input type="text" name="phone" required="required" class="form-control form-control-sm" value="<?php echo $row['phone']?>" />
 																	</div>
-														</div>
-														<div class="col-md-4">
-															<div class="form-group has-danger" style="text-align: right;">
-																	<label class="control-label"> تاريخ الميلاد </label>
-																	<input type="date" name="birthdate"  class="form-control form-control-sm" value="<?php echo $row['birthdate']?>" />
-															</div>
 														</div>
 													</div>
 													<hr>
@@ -456,12 +383,8 @@ if (isset($_SESSION['Edara30'])){
 					$name  = $_POST['full'];
 						// Password TRICK
 					$pass = empty ($_POST['newpassword']) ? $_POST['oldpassword'] :sha1($_POST['newpassword']);
-
-					$job_title  = $_POST['job_title'];
-					$al_city  = $_POST['al_city'];
-					$birthdate  = $_POST['birthdate'];
 					$phone  = filter_var($_POST['phone'], FILTER_SANITIZE_NUMBER_INT);
-					
+				
 					$department     = $_POST['department'];
 					$role  			= $_POST['role'];
 					
@@ -481,9 +404,6 @@ if (isset($_SESSION['Edara30'])){
 					}
 					if (empty($name)) {
 						$formErrors[] = '<span> لا يمكنك ترك اسم المستخدم فارغ</span> </i>';
-					}
-					if ($al_city == 0) {
-						$formErrors[] = '<span> اختر المدينة</span> </i>';
 					}
 					?>
 					
@@ -524,12 +444,9 @@ if (isset($_SESSION['Edara30'])){
 						}else{   //  the database with this Info
 							$stmt = $con->prepare("UPDATE users SET Username = ?, Email = ?, FullName = ?, Password = ?, 
 																	phone = ?,  
-																	job_title = ?, al_city = ?, 
-																	birthdate = ?, 
 																	department = ?,	
 																	role = ? WHERE UserID = ?");
 							$stmt->execute(array($user, $email, $name, $pass,  $phone, 
-														$job_title, $al_city,  $birthdate,  
 														$department, 
 														$role, $id));
 							//Echo Success Measage
@@ -619,176 +536,7 @@ if (isset($_SESSION['Edara30'])){
 							redirectHome($theMsg);
 						echo "</div>";
 					}
-		}elseif($do == 'Death'){   // === START Edit Page =====================
-			$userid = isset($_GET['userid'])&& is_numeric($_GET['userid']) ? intval($_GET['userid']) : 0;
-					// Check if the Userid is numeric and  Exist in Database	
-			$stmt = $con->prepare("SELECT * FROM users WHERE UserID = ?  LIMIT 1");
-			$stmt->execute(array($userid));
-			$row = $stmt->fetch();
-			$count = $stmt->rowCount();
-			if ($stmt->rowCount() > 0 && $info['department'] == $row['department']){ ?>
-					<div class="container-fluid">
-						<div class="row row-sm">
-							<div class="col-lg-12">
-									<div class="card">
-										<div class="card-header"><h3 class="card-title text-center">تعديل بيانات مشترك</h3></div>
-										<div class="card-body">
-											<form action="?do=Update2" method="POST">
-													<input type="hidden" name="userid" value="<?php echo $userid ?>" />
-												
-													<h3 class="card-title m-t-15" style="font-size: 15px;background-color: #022b09;color:#fff;padding:5px;margin-bottom:3px;">
-														البيانات الاساسية
-													</h3>
-													<div class="row p-t-20">
-														<div class="col-md-6">
-																	<div class="form-group has-danger" style="text-align: right;">
-																	<label class="control-label">الاسم بالكامل</label>
-																	<input type="text" name="full" class="form-control form-control-sm" value="<?php echo $row['FullName']?>"  required="required" />
-																	</div>
-														</div>
-														<div class="col-md-6">
-															<div class="form-group" style="text-align: right;">
-																	<label class="control-label"> الوظيفة  </label>
-																	<input type="text" name="job_title"  required="required"  value="<?php echo $row['job_title']?>" class="form-control form-control-sm"  />
-															</div>
-														</div>
-														
-													</div>
-													<div class="row">
-														<div class="col-md-6">
-															<div class="form-group has-danger" style="text-align: right;">
-																	<label class="control-label"> تاريخ الميلاد </label>
-																	<input type="date" name="birthdate"  class="form-control form-control-sm" value="<?php echo $row['birthdate']?>" />
-															</div>
-														</div>
-														
-														<div class="col-md-6">
-															<div class="form-group has-danger" style="text-align: right;">
-																	<label class="control-label"> تاريخ الوفاه </label>
-																	<input type="date" name="deathdate"  class="form-control form-control-sm" value="<?php echo $row['deathdate']?>" required />
-															</div>
-														</div>
-													</div>
-													<hr>
-													<div class="row p-t-20"> <!--  ===  department &&  Role ===  -->
-														<div class="col-md-6">
-															<div class="form-group" style="text-align: right;">
-																	<input type="hidden" value="<?php echo $row['department']?>" name="department"  class="form-control"  />
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="form-group" style="text-align: right;">
-																	<input type="hidden" value="<?php echo $row['role']?>" name="role"  class="form-control"  />
-																	<input type="hidden" value="2" name="RegStatus"  class="form-control"  />
-															</div>
-															
-														</div>
-													</div>
-													<div class="form-actions pull-right">
-														<i class="fa fa-check"></i> <input type="submit" class="btn btn-success swalDefaultSuccess"  value="حفظ التعديل" />  
-													</div>
-											</form>
-										</div>
-									</div>
-							</div>
-						</div>
-					</div>	<?php	
-			}else{
-					echo "<div class='container'>";
-						echo "<div class= 'alert alert-danger text-center'>-------- خطأ في الادخال -------  </div>" ; echo '<a href="logout" class="btn btn-danger">عودة للسابقة</a>';
-					echo "</div>";
-			}
 		
-		}elseif($do == 'Update2'){   // === strst of Update Page =================*
-			if($_SERVER['REQUEST_METHOD'] == 'POST'){
-					// Get Variabls from the Form
-					$id    = $_POST['userid'];
-					$name  = $_POST['full'];
-					$job_title  = $_POST['job_title'];
-					$birthdate  = $_POST['birthdate'];
-					$deathdate  = $_POST['deathdate'];
-					
-					$department     = $_POST['department'];
-					$role  			= $_POST['role'];
-					$RegStatus  	= $_POST['RegStatus'];
-					
-					//Validate The Form
-					$formErrors = array();
-				
-					if (empty($name)) {
-						$formErrors[] = '<span> لا يمكنك ترك اسم المستخدم فارغ</span> </i>';
-					}
-					if (empty($deathdate)) {
-						$formErrors[] = '<span> لا يمكنك ترك ت الوفاة  فارغ</span> </i>';
-					}
-					?>
-					
-					<div class ="container-fluid" style="direction:rtl;">	
-						<div class="row">
-							<div class="col-md-12">
-									<div class="card card-default">
-										<div class="card-body">
-											<div class="table-responsive export-table">
-													<table class="table table-bordered table-sm" style= "width:98%; direction:rtl;">
-														<thead><?php
-															foreach ($formErrors as $error) { ?> 
-																	<tr>
-																		<th class="bg-danger" style="width:90%;vertical-align:middle;font-size:small;"><?php echo $error ;?></th>
-																		<th><a type="button" class="btn btn-block btn-sm bg-navy"  href="javascript:history.go(-1)">عودة</a></th>
-																	</tr><?php 
-															}?>	
-														</thead>
-													</table>
-											</div>
-										</div>
-									</div>
-							</div>
-						</div>
-					</div><?php
-					//check if no error update operators
-					
-					if (empty($formErrors)){
-						$stmt2 = $con->prepare("SELECT * FROM users WHERE Username = ?  AND UserID != ?");
-						$stmt2->execute(array($user, $id));
-						$count = $stmt2->rowCount();
-						if($count == 1){
-							echo "<div class='container'>";
-									echo "<div class= 'alert alert-danger text-center'>-------- المستخدم موجود مسبقا -------  </div>" ;
-									$theMsg = isset($theMsg) ? $theMsg : '';
-									redirectHome($theMsg, 'back');
-							echo "</div>";
-						}else{   //  the database with this Info
-							$stmt = $con->prepare("UPDATE users SET  FullName = ?, job_title = ?,  birthdate = ?, deathdate = ?, RegStatus = ?, 
-																	department = ?,	
-																	role = ? WHERE UserID = ?");
-							$stmt->execute(array($name, $job_title, $birthdate, $deathdate, $RegStatus,
-														$department, 
-														$role, $id));
-							//Echo Success Measage
-							if ($stmt) { // if it's true
-									sleep(1);?>
-									<script src="../layout/dist/js/sweetalert2.min.js"></script>
-									<script>
-										Swal.fire({
-											title: 'تم تحديث بيانات العضو بنجاح',
-											width: 600, icon: 'success',  padding: '4em',
-											color: '#716add', showConfirmButton: false,
-											background: '#fff',  backdrop: `rgba(0,80,123,0.8)`
-										});
-									</script>
-									<?php
-									$theMsg = isset($theMsg) ? $theMsg : '';
-									redirectHome($theMsg);
-							}
-						}
-					}
-			}else{
-					echo "<div class='container'>";
-						echo "<div class= 'alert alert-danger text-center'>-------- خطأ في الادخال -------  </div>" ; echo '<a href="logout" class="btn btn-danger">عودة للسابقة</a>';
-						$theMsg = isset($theMsg) ? $theMsg : '';
-						redirectHome($theMsg);
-					echo "</div>";
-			}
 		
 
 

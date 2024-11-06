@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$role = null;
 		// Check if the User Exist in Database	
 		$stmt = $con->prepare("SELECT UserID, Username, Password FROM users
-									WHERE   Username = ? AND Password = ? AND role = 44  LIMIT 1");
+									WHERE   Username = ? AND Password = ? AND role IN ('44','45')  LIMIT 1");
 		$stmt->execute(array($user, $hashedPass));
 		$get = $stmt->fetch();
 		$count = $stmt->rowCount();

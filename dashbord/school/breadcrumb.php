@@ -13,7 +13,7 @@ if (isset($_SESSION['user'])) {
 								<h3 class="widget-user-username"><?php echo $info['FullName']; ?></h3>
 								
 							</div>
-							<div class="widget-user-image"><img class="img-circle elevation-2" src="../../layout/img/logo128.jpg" alt="depolm logo hefzmoyaser"></div>
+							<div class="widget-user-image"><img class="img-circle elevation-2" src="../../assets/images/about/img-1.jpg" alt="depolm logo hefzmoyaser"></div>
 						</div>
 					</div>
 				</div>

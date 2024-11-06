@@ -5,8 +5,8 @@
 				<div class="info-box">
 					<span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
 					<div class="info-box-content">
-						<span class="info-box-text text-center">  المناسبات </span>
-						<span class="info-box-number text-center"> <?php echo countItems2("event_id", "events", "aporove = 1 ") ?>  </span>
+						<span class="info-box-text text-center">  المكائن </span>
+						<span class="info-box-number text-center"> <?php echo countItems2("id", "vending_map", "id > 0 ") ?>  </span>
 					</div>
 				</div>
 			</div>
@@ -77,59 +77,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6">
-				<div class="card">
-					<div class="card-header bg-navy">
-						<h3 class="card-title">   مناسبات الموقع  <span class="badge badge-danger float-right"><?php echo countItems2("event_id", "events", "event_id > 0") ?> مناسبة</span></h3>
-					</div>
-					<div class="card-body table-responsive p-0" style="height: 300px;"> <?php 
-						$stmt = $con->prepare("SELECT * FROM events ORDER BY event_date DESC limit 5 ");
-						$stmt->execute();
-						$items = $stmt->fetchAll();
-						if (! empty($items)){ ?>
-							<div class="table-responsive main-dash">
-								<table class="table table-head-fixed table-bordered table-striped">
-									<thead>
-										<tr>
-											<th> التاريخ</th>
-											<th>  نوع المناسبة </th>
-											<th> صاحب الماسبة </th>
-											<th>  صورة </th>
-											<th> عرض الرسالة  </th>
-										</tr>
-									</thead>
-									<tbody><?php
-										foreach($items as $item){
-										echo "<tr>";
-											echo "<td>" . $item['event_date'] . "</td>";
-												$stmt = $con->prepare("SELECT * FROM events_names ");
-												$stmt->execute();  $events = $stmt->fetchAll();
-												foreach ($events as $event) {
-													if ($item['event_name'] == $event['id']) {
-														echo "<td>" . $event['event_name'] . "</td>";
-													}
-												}
-											
-												$stmt = $con->prepare("SELECT * FROM users ");
-												$stmt->execute();  $users = $stmt->fetchAll();
-												foreach ($users as $user) {
-													if ($item['created_by'] == $user['UserID']) {
-													echo "<td>" . $user['FullName'] . "</td>";
-										  			echo "<td><img class='direct-chat-img' src='../admin/nsharat_uploads/user_avatar/" . $user['user_avatar'] . "' alt='' /></td>";
-													} 
-												}
-										
-											echo "<td><a href='events' class='btn btn-sm btn-danger w-100'>عرض الرسالة</a></td>";
-										echo "</tr>";
-										} 							
-										?>
-									</tbody>
-								</table>
-							</div><?php 
-						}?>
-					</div>
-				</div>
-			</div>
 			
 			<div class="col-md-6">
 				<div class="card direct-chat direct-chat-warning">
@@ -182,11 +129,11 @@
 			<div class="col-md-6">
 				<div class="card">
 					<div class="card-header bg-navy">
-						<h3 class="card-title">مشتركين قيد الانتظار  <span class="badge badge-danger float-right"><?php echo countItems2("Username", "users", "role = 44  AND RegStatus = 0") ?> مشترك</span> </h3>
+						<h3 class="card-title">مشتركين قيد الانتظار  <span class="badge badge-danger float-right"><?php echo countItems2("Username", "users", "role  IN ('44','45')  AND RegStatus = 0") ?> مشترك</span> </h3>
 					</div>
 					<div class="card-body p-0">
 						<ul class="users-list clearfix"> <?php
-							$stmt = $con->prepare("SELECT * FROM users WHERE role = 44 AND RegStatus = 0 ORDER BY UserID DESC LIMIT 8");
+							$stmt = $con->prepare("SELECT * FROM users WHERE role IN ('44','45') AND RegStatus = 0 ORDER BY UserID DESC LIMIT 8");
 							$stmt->execute();
 							$rows = $stmt->fetchAll();
 							if (! empty($rows)){ 

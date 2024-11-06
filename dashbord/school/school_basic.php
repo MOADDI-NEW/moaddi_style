@@ -33,20 +33,15 @@ $do = isset($_GET['do']) ? $_GET['do'] : 'Manage';  // shor if
 							<div class="content mb-5">
 									<div class="homey">
 										<div class="firstinfo">
-										<?php echo'<img src="../admin/nsharat_uploads/user_avatar/' . $info['user_avatar'] . '" alt="'.$info['FullName'].'" style="width:100px">';?>
+										<?php echo'<img src="../../assets/images/about/img-1.jpg" alt="'.$info['FullName'].'" style="width:100px">';?>
 											<div class="profileinfo">
 												<h4><?php echo $info['FullName']?></h4>
-												<h5><?php echo $info['job_title']?></h5>
-												<p class="bio"> 
-													<span class="text-bold"> تاريخ الميلاد </span> : 
-												<time datetime="<?php echo $info['birthdate']?>"><?php echo $info['birthdate']?></time>
-											</p>
 											</div>
 										</div>
 									</div>
-									<div class="badgeshomey d-flex justify-content-center"><?php echo $info['al_city']?></div>
+									<div class="badgeshomey d-flex justify-content-center">Moaddi</div>
 							</div>
-							<a <?php echo "href='school_basic?formerror=9853&getid=6324&iteimid=3245&checksum=5681&cookie=3021&do=Edit&userid=" . $info['UserID'] ."&counksum=93214&action=421'";?> class="btn btn-primary btn-block"><b> تعديل البيانات </b></a>
+							<a <?php echo "href='school_basic?formerror=9853&getid=6324&iteimid=3245&checksum=5681&cookie=3021&do=Edit&userid=" . $info['UserID'] ."&counksum=93214&action=421'";?> class="btn btn-primary btn-block"><b> Edit My Profile  </b></a>
 						</div>
 					</div>
 				</div>
