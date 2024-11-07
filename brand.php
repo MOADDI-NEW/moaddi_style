@@ -20,6 +20,47 @@ include 'front_temp/navbar.php'; ?>
          </ol>
       </div>
    </nav>
+
+
+   <main class="main">
+      <link rel="stylesheet" href="assets/css/demos/demo-4.css">
+      <div class="intro-slider-container mb-5">
+            <div class="intro-slider owl-carousel owl-theme owl-nav-inside owl-light" data-toggle="owl" data-owl-options='{ "dots": true, "nav": false,  "responsive": { "1200": { "nav": true, "dots": false } }, "autoplay": true, "autoplayTimeout": 4000 }'>
+
+               <div class="intro-slide" style="background-image: url(assets/images/demos/demo-4/slider/slide-1.png);">
+                  <div class="container intro-content">
+                        <div class="row justify-content-end">
+                           <div class="col-auto col-sm-7 col-md-6 col-lg-5">
+                              <h3 class="intro-subtitle text-primary"> Unlock new markets and boost sales with Moaddi vending solutions </h3>
+                              <h1 class="intro-title text-primary">Moaddi</h1>
+                              <a href="./dashbord/" class="btn btn-primary btn-round"><span>JOIN NOW !</span><i class="icon-long-arrow-right"></i>
+                              </a>
+                           </div>
+                        </div>
+                  </div>
+               </div>
+               <div class="intro-slide" style="background-image: url(assets/images/demos/demo-4/slider/slide-2.png);">
+                  <div class="container intro-content">
+                        <div class="row justify-content-end">
+                           <div class="col-auto col-sm-7 col-md-6 col-lg-5">
+                              <h3 class="intro-subtitle text-primary"> Your products, our machines – a powerful partnership for success! </h3>
+                              <h1 class="intro-title text-primary">Moaddi</h1>
+                              <a href="./dashbord/" class="btn btn-primary btn-round"><span>JOIN NOW !</span><i class="icon-long-arrow-right"></i>
+                              </a>
+                           </div>
+                        </div>
+                  </div>
+               </div>
+
+            </div>
+            <span class="slider-loader"></span>
+      </div>
+   </main>
+
+
+
+
+
    <div class="page-content">
       <div class="container">
          <div class="row mb-5 mt-5">
