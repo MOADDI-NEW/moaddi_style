@@ -1,3 +1,9 @@
+<?php
+session_start();
+include 'dashbord/admin/connect.php';
+$sessionUseer = '';
+if (isset($_SESSION['user'])) { $sessionUseer = $_SESSION['user']; }
+if (isset($_SESSION['Edara30'])) { $sessionUseer = $_SESSION['Edara30']; } ?>
 <header class="header">
    <div class="header-top">
       <div class="container">
@@ -22,7 +28,11 @@
                      <ul>
                         <li><a href="tel:#"><img src="assets/images/svg/whatsapp-svgrepo-com.svg" width="20" height="20"></a></li>
                         <li><a href="tel:#"><img src="assets/images/svg/wechat-logo-svgrepo-com.svg" width="20" height="20"></a></li>
-                        <li><a href="./dashbord/"><i class="icon-user"></i>Login</a></li>
+                        <?php if (isset($_SESSION['user']) || isset($_SESSION['Edara30'])) { 
+                             echo '<li><a href="./dashbord/"><i class="icon-user"></i>My account</a></li>';
+                        }else  {
+                        echo'<li><a href="./dashbord/"><i class="icon-user"></i>Login</a></li>';
+                        }?>
                      </ul>
             </ul>
          </div>

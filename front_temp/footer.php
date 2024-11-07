@@ -30,7 +30,7 @@
 </div>
 
 <?php
-session_start(); // Start a session to use PHP sessions, if needed.
+
 
 if (!isset($_COOKIE['newsletter_popup_displayed'])) {
     // Set a cookie to expire in 30 days
