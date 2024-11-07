@@ -34,7 +34,7 @@ include 'front_temp/navbar.php';
                         <h3>The Office</h3>
                         <ul class="contact-list">
                            <li><i class="icon-map-marker"></i><?php echo $settings['6'];?></li>
-                           <li><i class="icon-phone"></i><a href="tel:<?php echo $settings['8'];?>"><?php echo $settings['8'];?></a></li>
+                           <!-- <li><i class="icon-phone"></i><a href="tel:<?php echo $settings['8'];?>"><?php echo $settings['8'];?></a></li> -->
                            <li><i class="icon-envelope"></i><a href="mailto:<?php echo $settings['7'];?>"><?php echo $settings['7'];?></a></li>
                         </ul>
                      </div>
@@ -51,6 +51,8 @@ include 'front_temp/navbar.php';
                      $FullName  = $_POST['FullName'];
                      $Email = filter_var($_POST['Email'], FILTER_SANITIZE_EMAIL);
                      $phone  = filter_var($_POST['phone'], FILTER_SANITIZE_NUMBER_INT);
+                     $Country  = $_POST['Country'];
+                     $City  = $_POST['City'];
                      $mes_1  = $_POST['mes_1'];
                      if (isset($FullName)) {
                            $filterdUser = filter_var($FullName, FILTER_SANITIZE_STRING);
@@ -81,12 +83,15 @@ include 'front_temp/navbar.php';
                      }
 
                      if (empty($formErrors)) {
-                           $stmt = $con->prepare("INSERT INTO messages (FullName, Email, phone, mes_1, mes_Date) VALUES(:zFullName, :zEmail, :zphone, :zmes_1, now())");
+                           $stmt = $con->prepare("INSERT INTO messages (FullName, Email, phone, Country, City, mes_1, mes_Date) 
+                                                         VALUES(:zFullName, :zEmail, :zphone, :zCountry, :zCity, :zmes_1, now())");
                            $stmt->execute(array(
 
                               'zFullName'  => $FullName,
                               'zEmail' => $Email,
                               'zphone' => $phone,
+                              'zCountry' => $Country,
+                              'zCity' => $City,
                               'zmes_1' => $mes_1
                            ));
                            //Echo Success Measage
@@ -130,6 +135,16 @@ include 'front_temp/navbar.php';
                      <div class="col-sm-6">
                         <label for="cphone" class="sr-only">Phone</label>
                         <input type="tel" class="form-control" name="phone" placeholder="Phone">
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-sm-6">
+                        <label for="cemail" class="sr-only">Country</label>
+                        <input type="text" class="form-control" name="Country" placeholder="Country *" required>
+                     </div>
+                     <div class="col-sm-6">
+                        <label for="cphone" class="sr-only">City</label>
+                        <input type="text" class="form-control" name="City" placeholder="City *" required>
                      </div>
                   </div>
 
