@@ -52,6 +52,11 @@ if (isset($_SESSION['Edara30'])) { $sessionUseer = $_SESSION['Edara30']; } ?>
                         <li class="active"><a href="./" class="sf-with-ul">Home</a></li>
                         <li><a href="about" class="sf-with-ul">About Us</a></li>
                         <li><a href="contact" class="sf-with-ul">Contact Us</a></li>
+                        <?php if (isset($_SESSION['user']) || isset($_SESSION['Edara30'])) { 
+                             echo '<li><a href="./dashbord/"><i class="sf-with-ul"></i>My account</a></li>';
+                        }else  {
+                        echo'<li><a href="./dashbord/"><i class="sf-with-ul"></i>Login</a></li>';
+                        }?>
                      </ul>
                </nav>
             </div>
