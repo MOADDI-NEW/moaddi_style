@@ -32,7 +32,7 @@ if (isset($_SESSION['Edara30'])){
                                     <div class="card-body">
                                         <div class="table-responsive export-table">
                                             <table id="example" class="table table-bordered table-striped" style= "width:98%; direction:rtl;">
-                                            <thead><tr> <th>#</th><th scope="col">التاريخ</th><th scope="col"> الاسم   </th><th scope="col">الايميل </th><th scope="col">الهاتف </th><th scope="col">الرسالة</th></tr></thead>
+                                            <thead><tr> <th>#</th><th scope="col">التاريخ</th><th scope="col"> الاسم   </th><th scope="col">الايميل </th><th scope="col">الهاتف </th><th scope="col">الدولة </th><th scope="col">المدينة </th><th scope="col">الرسالة</th></tr></thead>
                                                 <tbody>
                                                     <?php
                                                     $i = 1;
@@ -43,6 +43,8 @@ if (isset($_SESSION['Edara30'])){
                                                         echo "<td>" . $item['FullName'] . "</td>";
                                                         echo "<td>" . $item['Email'] . "</td>";
                                                         echo "<td>" . $item['phone'] . "</td>";
+                                                        echo "<td>" . $item['Country'] . "</td>";
+                                                        echo "<td>" . $item['City'] . "</td>";
                                                         echo "<td>" . $item['mes_1'] . "</td>";
                                                     echo "</tr>";
                                                     } 							
