@@ -12,7 +12,7 @@ function getTitle()
 	if (isset($pageTitle)) {
 		echo $pageTitle;
 	} else {
-		echo 'World Of Tech Home';
+		echo 'Moaddi';
 	}
 }
 

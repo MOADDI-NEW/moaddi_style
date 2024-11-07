@@ -4,7 +4,7 @@ include 'dashbord/admin/connect.php';
 include 'dashbord/functions/admin_functions.php';
 include 'dashbord/functions/front_functions.php';
 $settings = getSettingsToHomePage($con); 
-$pageTitle = $settings[0] . ' _ ' .'الرئيسية';  
+$pageTitle = $settings[0];  
 include 'front_temp/head.php';
 include 'front_temp/navbar.php';
 

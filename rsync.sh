@@ -12,8 +12,9 @@ push)
         --exclude '.git' \
         --exclude '.htaccess' \
         --exclude '.vscode' \
-        --exclude 'hafs/database_connection2.php' \
-        --exclude 'hafs/dist' \
+        --exclude 'dashbord/admin/connect.php' \
+        --exclude 'dashbord/admin/nsharat_uploads' \
+        --exclude 'dashbord/edara/member_panding_conc.php' \
         --exclude '404.php' \
         --exclude 'rsync.sh' \
         --exclude 'package-lock.json' \

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><?php getTitle() ?></title>
     <meta name="keywords" content="HTML5 Template">
-    <meta name="description" content="Moaddi.net">
+    <meta name="description" content="<?php echo $settings['2'];?>">
     <meta name="author" content="p-themes">
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
@@ -17,8 +17,16 @@
     <link rel="manifest" href="assets/images/icons/site.html">
     <link rel="mask-icon" href="assets/images/icons/safari-pinned-tab.svg" color="#666666">
     <link rel="shortcut icon" href="assets/images/icons/favicon.ico">
-    <meta name="apple-mobile-web-app-title" content="Molla">
-    <meta name="application-name" content="Molla">
+
+    <meta property="og:url" content="https://moaddi.net/" />
+    <meta property="og:title" content="<?php getTitle(); ?>" />
+    <meta property="og:description" content="<?php echo $settings['2'];?>" />
+    <meta property="og:image" content="https://moaddi.net/assets/images/logo.png" />
+    <meta property="og:type" content="website" />
+
+
+    <meta name="apple-mobile-web-app-title" content="Moaddi">
+    <meta name="application-name" content="Moaddi">
     <meta name="msapplication-TileColor" content="#cc9966">
     <meta name="msapplication-config" content="assets/images/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
