@@ -4,7 +4,7 @@ include 'dashbord/admin/connect.php';
 include 'dashbord/functions/admin_functions.php';
 include 'dashbord/functions/front_functions.php';
 $settings = getSettingsToHomePage($con); 
-$pageTitle = $settings[0] . ' _ ' .'الرئيسية';  
+$pageTitle = $settings[0] . ' _ ' .'Advertising & Marketing';  
 include 'front_temp/head.php';
 include 'front_temp/navbar.php'; ?>
    <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
@@ -56,29 +56,10 @@ include 'front_temp/navbar.php'; ?>
             <span class="slider-loader"></span>
       </div>
    </main>
-
-
-
-
-
    <div class="page-content">
+      <div class="container"><h2 class="title-lg text-center mb-3 mb-md-4">What does <span class="text-primary"> Moaddi </span>  offer to Advertising & Marketing ?</h2></div>
       <div class="container">
-         <div class="row mb-5 mt-5">
-            <div class="col-lg-12 col-md-12">
-                  <div class="banner banner-display mb-0">
-                     <a href="dashbord/">
-                        <img src="assets/images/backgrounds/bg-4.jpg" alt="Banner">
-                     </a>
-                     <div class="banner-content">
-                        <h4 class="banner-subtitle text-darkwhite"><a href="#">Moaddi</a></h4>
-                        <h3 class="banner-title text-white"><a href="#">Advertising & Marketing</a></h3>
-                        <a href="dashbord/" class="btn btn-outline-white banner-link"> Join Now !<i class="icon-long-arrow-right"></i></a>
-                     </div>
-                  </div>
-            </div>
-         </div>
-         <div class="row">
-            <?php
+         <div class="row"><?php
             $stmt = $con->prepare("SELECT * FROM marketing_front_page ORDER BY id DESC");
 				$stmt->execute();
 				$rows = $stmt->fetchAll();
@@ -90,35 +71,50 @@ include 'front_temp/navbar.php'; ?>
                </div><?php
             } ?>
          </div>
-      </div>
-      <?php 
-         $stmt = $con->prepare("SELECT * FROM clints  ORDER BY clint_id DESC");
-         $stmt->execute();
-         $items = $stmt->fetchAll();
-         if (! empty($items)){?>
-            <div class="mb-6"></div>
-            <div class="container">
-               <hr class="mt-3 mb-3">
-               <h2 class="title-lg text-center mb-3 mb-md-4">Success partners</h2>
-            </div>
-            <div class="container mb-5 mt-5">
-               <div class="owl-carousel owl-simple" data-toggle="owl" data-owl-options='{ "nav": false,  "dots": false, "margin": 30, "loop": true, "responsive": { "0": { "items":2 }, "420": { "items":3 }, "600": { "items":4 }, "900": { "items":5 }, "1024": { "items":6 } }, "autoplay": true, "autoplayTimeout": 4000 }'>
-                  <?php 
-                  foreach ($items as $item) { ?>
-                     <a href="<?php echo $item['brand_url'];?>" class="brand">
-                        <img src="./dashbord/admin/nsharat_uploads/avatar55/<?php echo $item['avatar55'];?>" alt="<?php echo $item['clint_name'];?>">
-                     </a><?php 
-                  } ?>
+         <div class="row mt-3">
+            <div class="col-lg-12">
+               <div class="video-poster" style="background-color:black;">
+                  <img src="assets/images/video/poster-1.jpg" alt="poster">
+                  <div class="video-poster-content">
+                     <a href="<?php echo $settings['4'];?>" class="btn-video btn-iframe"><i class="icon-play"></i></a>
+                  </div>
                </div>
-            </div><?php 
-         } ?>
+            </div>
+         </div>
+      </div>
+            <?php  $stmt = $con->prepare("SELECT * FROM clints  ORDER BY clint_id DESC"); $stmt->execute(); $items = $stmt->fetchAll(); if (! empty($items)){?>
+      <div class="mb-6"></div>
+      <div class="container"><hr class="mt-3 mb-3"><h2 class="title-lg text-center mb-3 mb-md-4">Success partners</h2></div>
+         <div class="container mb-5 mt-5">
+            <div class="owl-carousel owl-simple" data-toggle="owl" data-owl-options='{ "nav": false,  "dots": false, "margin": 30, "loop": true, "responsive": { "0": { "items":2 }, "420": { "items":3 }, "600": { "items":4 }, "900": { "items":5 }, "1024": { "items":6 } }, "autoplay": true, "autoplayTimeout": 4000 }'>
+               <?php 
+               foreach ($items as $item) { ?>
+                  <a href="<?php echo $item['brand_url'];?>" class="brand">
+                     <img src="./dashbord/admin/nsharat_uploads/avatar55/<?php echo $item['avatar55'];?>" alt="<?php echo $item['clint_name'];?>">
+                  </a><?php 
+               } ?>
+            </div>
+         </div><?php 
+          } ?>
+      <div class="cta cta-display bg-image pt-4 pb-4" style="background-image: url(assets/images/backgrounds/bg-4.jpg);">
+         <div class="container">
+            <div class="row justify-content-center">
+               <div class="col-md-10 col-lg-9 col-xl-7">
+                     <div class="row no-gutters flex-column flex-sm-row align-items-sm-center">
+                        <div class="col">
+                           <h3 class="cta-title text-white">Advertising & Marketing</h3>
+                           <p class="cta-desc text-white">Moaddi</p>
+                        </div>
+
+                        <div class="col-auto">
+                           <a href="dashbord/" class="btn btn-outline-white"><span>Join Now !</span><i class="icon-long-arrow-right"></i></a>
+                        </div>
+                     </div>
+               </div>
+            </div>
+         </div>
+      </div>
    </div>
-
-
-
-
-
-
 <?php
 include 'front_temp/footer.php';
 include 'front_temp/footer_script.php';

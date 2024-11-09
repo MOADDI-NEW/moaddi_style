@@ -51,6 +51,7 @@ if (isset($_SESSION['Edara30'])) { $sessionUseer = $_SESSION['Edara30']; } ?>
                      <ul class="menu sf-arrows">
                         <li class="active"><a href="./" class="sf-with-ul">Home</a></li>
                         <li><a href="about" class="sf-with-ul">About Us</a></li>
+                        <li><a href="faq" class="sf-with-ul"> FAQ </a></li>
                         <li><a href="contact" class="sf-with-ul">Contact Us</a></li>
                      </ul>
                </nav>

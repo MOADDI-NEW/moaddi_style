@@ -22,6 +22,7 @@
             <ul class="mobile-menu">
                 <li class="active"><a href="./" >Home</a></li>
                 <li><a href="about">About Us</a></li>
+                <li><a href="faq">FAQ</a></li>
                 <li><a href="contact">Contact Us</a></li>
                 <?php if (isset($_SESSION['user']) || isset($_SESSION['Edara30'])) { 
                         echo '<li><a href="./dashbord/">My account</a></li>';
