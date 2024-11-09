@@ -34,7 +34,13 @@ if (isset($_SESSION['Edara30'])) {
 						<li class="nav-item">
 							<a href="member_client" class="nav-link text-dark">
 								<i class="nav-icon fas fa-users"></i>
-								<p> قوائم المشتركين <span class="right badge badge-danger">A</span> </p>
+								<p>  مستخدمي الشركات <span class="right badge badge-danger">A</span> </p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="member_markting" class="nav-link text-dark">
+								<i class="nav-icon fas fa-users"></i>
+								<p>  مستخدمي المسوقين <span class="right badge badge-danger">A</span> </p>
 							</a>
 						</li>
 						
