@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="assets/css/plugins/magnific-popup/magnific-popup.css">
     <!-- Main CSS File -->
     <link rel="stylesheet" href="assets/css/style.css?<?php echo jsVersion(); ?>">
+    <link rel="stylesheet" href="assets/css/chat.css?<?php echo jsVersion(); ?>">
 </head>
 <body>
     <div class="page-wrapper">

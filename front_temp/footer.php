@@ -9,6 +9,23 @@
 </div>
 <button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
 
+
+<!-- Chatbot Toggle Button -->
+<div id="chatBotToggle">
+<i class="icon-comment-o"></i>
+</div>
+
+<!-- Chatbot Container -->
+<div class="chat-bot-container" id="chatBot" style="display: none;">
+    <div class="chat-bot-header"> Customer Service </div>
+    <div class="chat-bot-body" id="chatBody">
+    </div>
+    <input type="text" class="chat-bot-input" id="userInput" placeholder="Type your message..." disabled>
+</div>
+
+
+
+
 <!-- Mobile Menu -->
 <div class="mobile-menu-overlay"></div>
 
