@@ -51,21 +51,34 @@
                      </div>
                </div>
                <div class="col-lg-4">
-                     <div class="intro-banners">
-                        <div class="row row-sm">
-                           <div class="col-md-12 col-lg-12">
-                                 <div class="banner banner-display mb-0">
-                                    <a href="brand">
-                                       <img src="assets/images/banners/home/intro/banner-2.jpg" alt="Banner">
-                                    </a>
-                                    <div class="banner-content">
-                                       <h4 class="banner-subtitle text-darkwhite"><a href="#">Moaddi</a></h4>
-                                       <h3 class="banner-title text-white"><a href="#">Brand companies & Factories</a></h3>
-                                       <a href="brand" class="btn btn-outline-white banner-link">More Details<i class="icon-long-arrow-right"></i></a>
-                                    </div>
+                  <div class="intro-banners">
+                     <div class="row row-sm">
+                        <div class="col-md-6 col-lg-12">
+                              <div class="banner banner-display">
+                                 <a href="brand">
+                                    <img src="assets/images/banners/home/intro/banner-1.jpg" alt="Banner">
+                                 </a>
+                                 <div class="banner-content">
+                                    <h4 class="banner-subtitle text-darkwhite"><a href="./">Moaddi</a></h4>
+                                    <h3 class="banner-title text-white"><a href="brand">Brand companies & Factories</a></h3>
+                                    <a href="brand" class="btn btn-outline-white banner-link">Discover Now<i class="icon-long-arrow-right"></i></a>
                                  </div>
-                           </div>
+                              </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-12">
+                              <div class="banner banner-display mb-0">
+                                 <a href="marketing">
+                                    <img src="assets/images/banners/home/intro/banner-2.jpg" alt="Banner">
+                                 </a>
+                                 <div class="banner-content">
+                                    <h4 class="banner-subtitle text-darkwhite"><a href="./">Moaddi</a></h4>
+                                    <h3 class="banner-title text-white"><a href="marketing">Advertising & Marketing</a></h3>
+                                    <a href="marketing" class="btn btn-outline-white banner-link">Discover Now<i class="icon-long-arrow-right"></i></a>
+                                 </div>
+                              </div>
                         </div>
                      </div>
+                  </div>
                </div>
             </div>
