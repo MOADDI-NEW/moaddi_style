@@ -59,6 +59,16 @@ include 'front_temp/navbar.php'; ?>
    <div class="page-content">
       <div class="container"><h2 class="title-lg text-center mb-3 mb-md-4">What does <span class="text-primary"> Moaddi </span>  offer to Brand companies & Factories ?</h2></div>
       <div class="container">
+         <div class="row mt-3 mb-3">
+            <div class="col-lg-12">
+               <div class="video-poster" style="background-color:black;">
+                  <img src="assets/images/video/poster-1.jpg" alt="poster">
+                  <div class="video-poster-content">
+                     <a href="<?php echo $settings['4'];?>" class="btn-video btn-iframe"><i class="icon-play"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
          <div class="row"><?php
             $stmt = $con->prepare("SELECT * FROM brand_front_page ORDER BY id DESC");
 				$stmt->execute();
@@ -70,16 +80,6 @@ include 'front_temp/navbar.php'; ?>
                   }?>
                </div><?php
             } ?>
-         </div>
-         <div class="row mt-3">
-            <div class="col-lg-12">
-               <div class="video-poster" style="background-color:black;">
-                  <img src="assets/images/video/poster-1.jpg" alt="poster">
-                  <div class="video-poster-content">
-                     <a href="<?php echo $settings['4'];?>" class="btn-video btn-iframe"><i class="icon-play"></i></a>
-                  </div>
-               </div>
-            </div>
          </div>
       </div>
             <?php  $stmt = $con->prepare("SELECT * FROM clints  ORDER BY clint_id DESC"); $stmt->execute(); $items = $stmt->fetchAll(); if (! empty($items)){?>
