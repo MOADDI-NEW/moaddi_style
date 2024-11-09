@@ -20,10 +20,14 @@
          
          <nav class="mobile-nav">
             <ul class="mobile-menu">
-                  <li class="active"><a href="index.html">Home</a></li>
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="blog.html" class="sf-with-ul">Blog</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
+                <li class="active"><a href="./" >Home</a></li>
+                <li><a href="about">About Us</a></li>
+                <li><a href="contact">Contact Us</a></li>
+                <?php if (isset($_SESSION['user']) || isset($_SESSION['Edara30'])) { 
+                        echo '<li><a href="./dashbord/">My account</a></li>';
+                }else  {
+                echo'<li><a href="./dashbord/">Login</a></li>';
+                }?>
             </ul>
          </nav>
       </div>
