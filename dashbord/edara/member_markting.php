@@ -60,7 +60,8 @@ if (isset($_SESSION['Edara30'])){
 															
 															echo "<td data-label='التحكم' style='text-align:center;'>";
 																if (array_search($info['GroupID'], ['1']) !== false) { // المدير
-																		echo"<a href='member_markting?memberid=315&formerror=form&action=employee&emplyeeid=3265&action=grtstat&grtstat=359&formerror=9853&getid=63524&iteimid=32145&checksum=56821&cookie=30121&do=Edit&userid=" . $row['UserID'] ."&counksum=93214&action=421' class=''><i class='fas fa-user-edit' style='text-decoration: none;color:#0c0ff3;font-size:15px;'></i>  </a>";
+																		echo"<a href='member_markting?memberid=315&formerror=form&action=employee&emplyeeid=3265&action=grtstat&grtstat=359&formerror=9853&getid=63524&iteimid=32145&checksum=56821&cookie=30121&do=Edit&userid=" . $row['UserID'] ."&counksum=93214&action=421' class=''><i class='fas fa-user-edit pl-2' style='text-decoration: none;color:#0c0ff3;font-size:15px;'></i>  </a>";
+																		echo"<a href='member_markting?memberid=315&formerror=form&action=employee&emplyeeid=3265&action=grtstat&grtstat=359&formerror=9853&getid=63524&iteimid=32145&checksum=56821&cookie=30121&do=Print&userid=" . $row['UserID'] ."&counksum=93214&action=421' class=''><i class='fas fa-print pl-2' style='text-decoration: none;color:#0c0ff3;font-size:15px;'></i>  </a>";
 																		echo "<a href='member_markting?do=Delete&userid=" . $row['UserID'] . "' class='deleteEmployee' title=\" حذف\"  ><i class='far fa-trash-alt' style='text-decoration: none;color: crimson;padding: 5px;'></i> </a>";
 																}
 															echo "</td>";
@@ -476,7 +477,123 @@ if (isset($_SESSION['Edara30'])){
 			}
 		
 
+		}elseif($do == 'Print'){   // === START Edit Page =====================
+			$userid = isset($_GET['userid'])&& is_numeric($_GET['userid']) ? intval($_GET['userid']) : 0;
+					// Check if the Userid is numeric and  Exist in Database	
+			$stmt = $con->prepare("SELECT * FROM users WHERE UserID = ?  LIMIT 1");
+			$stmt->execute(array($userid));
+			$row = $stmt->fetch();
+			$count = $stmt->rowCount();
+			if ($stmt->rowCount() > 0 && $info['department'] == $row['department']){ ?>
+					
+					<script type="text/javascript">function printDiv(n){var e=document.getElementById(n).innerHTML,t=document.body.innerHTML;document.body.innerHTML="<html><head><title></title></head><body>"+e+"</body>",window.print(),document.body.innerHTML=t}</script>
+					<div id="printablediv"> <!--  Start div to print  -->
+						<div class="container-fluid" style="direction:ltr !important;">
+							<div class="form-style-10 px-2 py-2" style="background:repeating-linear-gradient(#f8efde38,#f8efde0d 20px,#f8efde00 20px,#e5d0a2 22px ); border: 10px dotted rgb(0 0 0 / 18%);">
+									
+									<div class="row">
+										
+										<div class="col-12">
+										<div class="section"> Marketer Registration Form  </div>
+											<div class="card card-widget widget-user-2">
+												<div class="widget-user-header bg-warning">
+													<div class="widget-user-image">
+														<img class="img-circle elevation-2" src="../admin/nsharat_uploads/user_avatar/<?php echo $row['user_avatar'];?>" alt="User Avatar" >
+													</div>
+													<h3 class="widget-user-username"><?php echo $row['FullName'];?></h3>
+													<h5 class="widget-user-desc"><?php  if ($row['role'] == 44 ){echo "Brand companies & Factories"; } if ($row['role'] == 45 ){echo "Advertising & Marketing"; }?></h5>
+												</div>
+												<div class="card-footer p-0">
+													<ul class="nav flex-column">
+														<li class="nav-item">
+														<a href="#" class="nav-link">
+														<?php echo $row['FullName'];?> <span class="float-right badge bg-light">Name</span>
+														</a>
+														</li>
+														<li class="nav-item">
+														<a href="#" class="nav-link">
+														<?php echo $row['country'];?> <span class="float-right badge bg-light">Country</span>
+														</a>
+														</li>
+														<li class="nav-item">
+														<a href="#" class="nav-link">
+														<?php echo $row['phone'];?> <span class="float-right badge bg-light">Phone</span>
+														</a>
+														</li>
+														<li class="nav-item">
+														<a href="#" class="nav-link">
+														<?php echo $row['whatsapp'];?> <span class="float-right badge bg-light">Whatsapp</span>
+														</a>
+														</li>
+														<li class="nav-item">
+														<a href="#" class="nav-link">
+														<?php echo $row['wechat'];?> <span class="float-right badge bg-light">Wechat</span>
+														</a>
+														</li>
+														<li class="nav-item">
+														<a href="#" class="nav-link">
+														<?php echo $row['web_url'];?> <span class="float-right badge bg-light">web_url</span>
+														</a>
+														</li>
+														<li class="nav-item">
+														<a href="#" class="nav-link">
+														<?php echo $row['Email'];?> <span class="float-right badge bg-light">Email</span>
+														</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<style>@media print { .no-print, .no-print * { display: none !important; } }</style><br>
+									<div class="no-print">
+										<div class="button-section mt-4">
+											<input type="button" value="الطباعة" class="btn btn-primary btn-lg" onclick="javascript:printDiv('printablediv')" />
+										</div>
+									</div>
+							</div>
+						</div>
+					</div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<?php
+			}else{
+				echo "<div class='container'>";
+					echo "<div class= 'alert alert-danger text-center'>-------- خطأ في الادخال -------  </div>" ; echo '<a href="logout" class="btn btn-danger">عودة للسابقة</a>';
+					$theMsg = isset($theMsg) ? $theMsg : '';
+					redirectHome($theMsg);
+				echo "</div>";
+			}
 		}elseif($do == 'Delete'){ // Delete members page==========
 			if (array_search($info['GroupID'], ['1']) !== false) {	  
 					echo "<h1 class='text-center'> حذف مستخدم</h1>";
