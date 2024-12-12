@@ -52,6 +52,12 @@ if (isset($_SESSION['Edara30'])) {
 							<i class="nav-icon fas fa-tree"></i>
 								<p> مشتركين قيد الانتظار <span class="right badge badge-danger">A</span> </p>
 							</a>
+						</li><br>
+						<li class="nav-item">
+							<a href="compnies_from_makting" class="nav-link text-dark">
+							<i class="nav-icon fas fa-tree"></i>
+								<p>    المرشح من المسوقين <span class="right badge badge-danger">C-M</span> </p>
+							</a>
 						</li><?php
 					} 
 					if (array_search($info['GroupID'], ['1']) !== false) { // ادارة فقط ?> 

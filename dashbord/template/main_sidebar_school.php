@@ -38,6 +38,11 @@ if (isset($_SESSION['user'])) {
 						</a>
 					</li>
 					<li class="nav-item">
+						<a href="my_companies" class="nav-link text-dark"><i class="nav-icon fas fa-th"></i>
+							<p> My companies  <span class="right badge badge-danger">Edit</span></p>
+						</a>
+					</li>
+					<li class="nav-item">
 						<a href="web_rate"  class="nav-link text-dark">
 						<i class="nav-icon fas fa-table"></i>
 							<p>  Rate our services </p>
