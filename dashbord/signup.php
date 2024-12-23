@@ -190,7 +190,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 						<div class="row">
 							<div class="col-lg-4">
 								<div class="input-group mb-3">
-									<input class="form-control" type="text" name="username" id="username" autocomplete="off"  style="padding:0px;font-size:small;" placeholder="اسم المستخدم" required="required" onBlur="checkUsernameAvailability()"  value="<?php echo (rand(100000,999999));?>"/>
+									<input class="form-control" type="text" name="username" id="username" autocomplete="off"  style="padding:0px;font-size:small;" placeholder="اسم المستخدم" required="required" onBlur="checkUsernameAvailability()"  value="<?php echo (rand(100000,999999));?>"/> 
 										<script> function checkUsernameAvailability() { $("#loaderIcon").show(); jQuery.ajax({ url: "check_availability", data: 'Username=' + $("#username").val(), type: "POST", success: function(data) { $("#username-availability-status").html(data); $("#loaderIcon").hide(); }, error: function() {} }); } </script>
 									<div class="input-group-append"><div class="input-group-text"><span class="fas fa-user"></span></div></div>
 									<center> <span id="username-availability-status" style="font-size:12px;"></span> </center>
