@@ -22,7 +22,7 @@ if (isset($_SESSION['user'])) {
 					<a href="logout" class="d-block text-dark text-center mt-4"><small class="p-2 bg-navy">Log out </small></a>
 				</div>
 			</div><?php 
-			if (array_search($info['RegStatus'], ['1']) !== false) { // مسجل بالدبلوم ?>
+			if (array_search($info['RegStatus'], ['1']) !== false) { // مسجل  ?>
 			<nav class="mt-2">
 				<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 					<li class="nav-item">
@@ -36,12 +36,21 @@ if (isset($_SESSION['user'])) {
 						<a href="school_basic" class="nav-link text-dark"><i class="nav-icon fas fa-th"></i>
 							<p> My profile  <span class="right badge badge-danger">Edit</span></p>
 						</a>
-					</li>
-					<li class="nav-item">
-						<a href="my_companies" class="nav-link text-dark"><i class="nav-icon fas fa-th"></i>
-							<p> My companies  <span class="right badge badge-danger">Edit</span></p>
-						</a>
-					</li>
+					</li><?php
+					if (array_search($info['role'], ['45']) !== false) { // Markting  ?>
+						<li class="nav-item">
+							<a href="my_companies" class="nav-link text-dark"><i class="nav-icon fas fa-th"></i>
+								<p> My companies  <span class="right badge badge-danger">Edit</span></p>
+							</a>
+						</li><?php 
+					}
+					if (array_search($info['role'], ['44']) !== false) { // company  ?>
+						<li class="nav-item">
+								<a href="my_brnds" class="nav-link text-dark"><i class="nav-icon fas fa-th"></i>
+									<p> My brnds  <span class="right badge badge-danger">Edit</span></p>
+								</a>
+							</li><?php 
+					}?>
 					<li class="nav-item">
 						<a href="web_rate"  class="nav-link text-dark">
 						<i class="nav-icon fas fa-table"></i>
